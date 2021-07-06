@@ -1,0 +1,17 @@
+.tab-select{
+    display:flex;
+    float: right;
+  }
+.tab-item {
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 80px;
+    cursor: pointer;
+    color:#000;
+  }
+
+  .is-actived {
+    color:brown;
+  }
+

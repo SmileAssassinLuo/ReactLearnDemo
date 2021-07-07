@@ -1,0 +1,45 @@
+.tab {
+    width:1120px;
+    height:500px;
+    position:absolute;
+    background:#fff;
+    margin-left:160px;
+    box-shadow:0 10px 40px 0 rgba(0,0,0,0.15);
+    border :5px solid crimson;
+}
+
+.tab-title-ul{
+    display: flex;
+}
+.tab-title{
+    flex-grow:1;
+    border: 5px solid crimson;
+    border-top:none;
+    font-size: 18px;
+    font-weight: bold;
+    color:brown;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+.is-selectedTab{
+    border: none;
+    color:#000;
+}
+.tab-item-ul{
+   display: flex ;
+   flex-wrap:wrap;
+   
+}
+.unselected-sences{
+    display:none;
+}
+.tab-item-list{
+  
+    width: 280px;
+    height: 180px;
+    text-align: center;
+    line-height: 200px;
+    margin:20px 0 0 50px;
+    background-color: darksalmon;
+}

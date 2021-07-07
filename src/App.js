@@ -23,12 +23,59 @@ function App() {
   useEffect(() => {
      CD.lan = language;
   }, [language])
+
+  const [tab,setTab] = useState('Tab1');
+  const TabOptions = [
+    {
+        name:'菜单一',
+        value: 'Tab1',
+        childScenes:[
+            {
+                name:'菜单一场景一',
+                value:'Tab1Scene1',
+                parTab:"Tab1"
+            },{
+                name:'菜单一场景二',
+                value:'Tab1Scene2',
+                parTab:"Tab1"
+            }
+        ]
+    },
+    {
+        name :'菜单二',
+        value: 'Tab2',
+        childScenes:[
+            {
+                name:'菜单二场景一',
+                value:'Tab2Scene1',
+                parTab:"Tab2"
+            },{
+                name:'菜单二场景二',
+                value:'Tab2Scene2',
+                disabled:true,
+                parTab:"Tab2"
+            },{
+                name:'菜单二场景三',
+                value:'Tab2Scene3',
+                parTab:"Tab2"
+            },{
+                name:'菜单二场景四',
+                value:'Tab2Scene4',
+                disabled:true,
+                parTab:"Tab2"
+            }
+        ]
+    }
+  ]
+  const onChangeTab = (val) => {
+    setTab(val)
+  }
   return (
     <div>
           <HomePageLog/>
           <LanSwitch value = {language} options = {lanArrOptions} onChangeLan = {onChangeLan}></LanSwitch>
           <GlobalContext.Provider value = {CD}>
-              <Content/>
+              <Content options = {TabOptions} tab = {tab} onChangeTab = {onChangeTab}></Content>
           </GlobalContext.Provider>
     </div>
   );

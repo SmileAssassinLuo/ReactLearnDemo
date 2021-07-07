@@ -1,6 +1,7 @@
 .logo{
-    width:275px;
-    height:200px;
+    width:100px;
+    height:100px;
     margin:20px 0 0 30px;
     background:url("../../asset/img/logo192.png") no-repeat;
+    background-size: 100px
 }

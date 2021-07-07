@@ -23,7 +23,7 @@ function LanguageSwitch(props){
                 <li 
                     key = {item.value}
                     className = {
-                       `tab-item ${ item.value === value ? 'is-actived' : ""}`
+                       `tab-item-lan ${ item.value === value ? 'is-actived' : ""}`
                     }
                     onClick = {() =>  { 
                         onChangeLan(item.value);

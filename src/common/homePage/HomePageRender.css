@@ -15,16 +15,20 @@
     flex-grow:1;
     border: 5px solid crimson;
     border-top:none;
+    border-left:none;
     font-size: 18px;
     font-weight: bold;
-    color:brown;
+    color:#000;
     text-align: center;
     height: 60px;
     line-height: 60px;
 }
+.tab-title:last-child{
+    border-right: none;
+}
 .is-selectedTab{
-    border: none;
-    color:#000;
+    border-bottom: none;
+    color:brown;
 }
 .tab-item-ul{
    display: flex ;
@@ -42,4 +46,7 @@
     line-height: 200px;
     margin:20px 0 0 50px;
     background-color: darksalmon;
+}
+.tab-item-list-disabled{
+    display: none;
 }

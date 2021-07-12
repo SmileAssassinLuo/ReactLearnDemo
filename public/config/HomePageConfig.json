@@ -1,0 +1,156 @@
+{
+    "TabOptions":[
+       {
+        "TW":[
+            {
+                "name":"菜單一",
+                "value": "Tab1",
+                "childScenes":[
+                    {
+                        "name":"菜單一場景一",
+                        "scenseValue":"tab1Scene1"
+                    },{
+                        "name":"菜單一場景二",
+                        "scenseValue":"tab1Scene2"
+                    }
+                ]
+            },
+            {
+                "name" :"菜單二",
+                "value": "Tab2",
+                "childScenes":[
+                    {
+                        "name":"菜單二場景一",
+                        "scenseValue":"tab2Scene1"
+                    },{
+                        "name":"菜單二場景二",
+                        "scenseValue":"tab2Scene2",
+                        "disabled":true
+                    },{
+                        "name":"菜單二場景三",
+                        "scenseValue":"tab2Scene3"
+                    },{
+                        "name":"菜單二場景四",
+                        "scenseValue":"tab2Scene4",
+                        "disabled":true
+                    }
+                ]
+            },  
+            {
+                "name":"菜單三",
+                "value": "Tab3",
+                "childScenes":[
+                    {
+                        "name":"菜單三場景一",
+                        "scenseValue":"tab3Scene1"
+                    },{
+                        "name":"菜單三場景二",
+                        "scenseValue":"tab3Scene2"
+                    }
+                ]
+            }
+          ]
+       },{
+        "CN":[
+            {
+                "name":"菜单一",
+                "value": "Tab1",
+                "childScenes":[
+                    {
+                        "name":"菜单一场景一",
+                        "scenseValue":"tab1Scene1"
+                    },{
+                        "name":"菜单一场景二",
+                        "scenseValue":"tab1Scene2"
+                    }
+                ]
+            },
+            {
+                "name" :"菜单二",
+                "value": "Tab2",
+                "childScenes":[
+                    {
+                        "name":"菜单二场景一",
+                        "scenseValue":"tab2Scene1"
+                    },{
+                        "name":"菜单二场景二",
+                        "scenseValue":"tab2Scene2",
+                        "disabled":true
+                    },{
+                        "name":"菜单二场景三",
+                        "scenseValue":"tab2Scene3"
+                    },{
+                        "name":"菜单二场景四",
+                        "scenseValue":"tab2Scene4",
+                        "disabled":true
+                    }
+                ]
+            },  
+            {
+                "name":"菜单三",
+                "value": "Tab3",
+                "childScenes":[
+                    {
+                        "name":"菜单三场景一",
+                        "scenseValue":"tab3Scene1"
+                    },{
+                        "name":"菜单三场景二",
+                        "scenseValue":"tab3Scene2"
+                    }
+                ]
+            }
+          ]
+    },
+    {
+        "US":[
+            {
+                "name":"MenuOne",
+                "value": "Tab1",
+                "childScenes":[
+                    {
+                        "name":"MenuOneSceneOne",
+                        "scenseValue":"tab1Scene1"
+                    },{
+                        "name":"MenuOneSceneTwo",
+                        "scenseValue":"tab1Scene2"
+                    }
+                ]
+            },
+            {
+                "name" :"MenuTwo",
+                "value": "Tab2",
+                "childScenes":[
+                    {
+                        "name":"MenuTwoSceneOne",
+                        "scenseValue":"tab2Scene1"
+                    },{
+                        "name":"MenuTwoSceneTwo",
+                        "scenseValue":"tab2Scene2",
+                        "disabled":true
+                    },{
+                        "name":"MenuTwoSceneThree",
+                        "scenseValue":"tab2Scene3"
+                    },{
+                        "name":"MenuTwoSceneFour",
+                        "scenseValue":"tab2Scene4",
+                        "disabled":true
+                    }
+                ]
+            },  
+            {
+                "name":"MenuThree",
+                "value": "Tab3",
+                "childScenes":[
+                    {
+                        "name":"MenuThreeSceneOne",
+                        "scenseValue":"tab3Scene1"
+                    },{
+                        "name":"MenuThreeSceneTwo",
+                        "scenseValue":"tab3Scene2"
+                    }
+                ]
+            }
+          ]
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 import React ,{ useState }from 'react';
-import {HashRouter as Router, Link} from 'react-router-dom';//引入浏览器路由,(还有Hash路由)，Route指定组件
+import { Link } from 'react-router-dom';//引入浏览器路由,(还有Hash路由)，Route指定组件
 
 import './HomePageRender.css'
 
@@ -16,7 +16,7 @@ function HomePageRender(props){
   
     const [currentIndex,setCurrentIndex] = useState(0);
     return (
-        <Router>
+
             <div className = {`tab`}>
                 <ul className = {`tab-title-ul`}>
                     {
@@ -59,23 +59,8 @@ function HomePageRender(props){
                         ))
                     }
                 </div>
-
-                {/* <Switch>
-                {
-                        childOptions.map((routerOpt) => (
-                            routerOpt.map((routerChildOpt,routerChildIndex) => (
-                                <Route 
-                                key = {routerChildOpt.scenseValue + routerChildIndex.toString()}
-                                path = { `/${routerChildOpt.scenseValue}` }  component = {routerChildOpt.value}  
-                                
-                                />
-                            ))
-                        ))
-                    }
-                </Switch> */}
             </div>
-        </Router>
-    )
+            )
 }
 
 

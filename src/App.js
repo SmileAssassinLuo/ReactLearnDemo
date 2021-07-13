@@ -1,6 +1,8 @@
 import React , { createContext,useState ,useEffect } from 'react'
 import {renderRoutes} from 'react-router-config';
-import { HashRouter ,Switch } from 'react-router-dom';
+import { Switch, BrowserRouter as Router } from 'react-router-dom';
+import axios from 'axios';
+
 import HomePageLog from './common/homePage/HomePageLogo';
 
 
@@ -9,33 +11,99 @@ import routes from './common/router/appRouter';
 const CD = {
     language:"TW"
   }
+
+const CodeList = {
+    tabOpt:[]
+}
 export const GlobalContext = createContext({
     lan:CD.language,
+    tabOpt:CodeList.tabOpt,
     toggle:() => {}
 });
 
+
+
 function App() {
     const [defaultLanguage ,setLanguage] = useState(CD.language);
+    const [TabOptionsTW,setTabOptionsTW] = useState([]);
+    const [TabOptionsCN,setTabOptionsCN] = useState([]);
+    const [TabOptionsUS,setTabOptionsUS] = useState([]);
+    const [defaultTabOpt,setTabOpt] = useState(TabOptionsTW);
+    const [IsLoading, setIsLoading] = useState(true);
+    const [IsError, setIsError] = useState(false);
+
+    const  toggleFun = (val) => {
+        CD.language = val; 
+        setLanguage(val); 
+        switch(val){
+            case "TW" : setTabOpt(TabOptionsTW) ;break;
+            case "CN" : setTabOpt(TabOptionsCN) ;break;
+            case "US" : setTabOpt(TabOptionsUS) ;break;
+            default :   setTabOpt(TabOptionsTW) ;break;
+        }
+    }
 
     useEffect(() => {
         console.log(CD.language);
-    }, [defaultLanguage])
+    }, [defaultLanguage]);
+
+
+    useEffect(() => {
+        const tabMenuUrl = `http://${window.location.host}/config/HomePageConfig.json`;
+         const fetchData = async() => {
+          
+            setIsError(false);
+            setIsLoading(true);
+  
+            try{
+                    const result = await axios(
+                        tabMenuUrl,
+                    )
+                    result.data["TabOptions"].forEach((item) => {
+                            if(item.hasOwnProperty('TW')){
+                                setTabOptionsTW(item['TW']);
+                                setTabOpt(item['TW']);
+                            }
+                            if(item.hasOwnProperty('CN')){
+                                setTabOptionsCN(item['CN']);
+                            }
+                            if(item.hasOwnProperty('US')){
+                                setTabOptionsUS(item['US']);
+                            }
+                    })
+
+                }catch(e){
+                    setIsError(true);
+                }
+                setIsLoading(false);
+            }
+       fetchData();
+    }, []);
+
+
+
+
+
     return (
         <div>
-             <GlobalContext.Provider value = {{
-                 defaultLanguage,
-                 toggle:(val) => { 
-                    CD.language = val; 
-                    setLanguage(val); 
-                 }
-             }}>
-                <HashRouter>
-                    <HomePageLog />
-                    <Switch>
-                        { renderRoutes(routes) }
-                    </Switch>
-                </HashRouter>
-            </GlobalContext.Provider>
+            {IsError && <div>axios error</div>}
+            {IsLoading?(
+                <div>Loading ...</div>
+            ):
+            (
+                <GlobalContext.Provider value = {{
+                    defaultLanguage,
+                    defaultTabOpt,
+                    toggle:toggleFun
+                }}>
+                    <Router>
+                        <HomePageLog />
+                        <Switch>
+                            { renderRoutes(routes) }
+                        </Switch>
+                    </Router>
+                </GlobalContext.Provider>
+             )}
         </div>
     )
 }
